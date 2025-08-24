@@ -213,7 +213,7 @@ export default function ProductDetailPage() {
                 </Button>
               </Link>
               <Link href="/" className="text-2xl font-bold text-blue-600">
-                KJ Electronics
+                <span style={{ color: '#6db33f' }}>KJ Electronics</span>
               </Link>
             </div>
             <Button variant="ghost" size="sm">
@@ -273,7 +273,7 @@ export default function ProductDetailPage() {
               </div>
 
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-bold text-blue-600">
+                <span className="text-4xl font-bold" style={{ color: '#6db33f' }}>
                   {formatPrice(product.price)}
                 </span>
                 {product.originalPrice && (
@@ -351,9 +351,10 @@ export default function ProductDetailPage() {
                   size="lg" 
                   className={`w-full text-lg py-6 ${
                     isElectronicsComponent 
-                      ? 'bg-blue-600 hover:bg-blue-700' 
-                      : 'bg-blue-600 hover:bg-blue-700'
+                      ? 'hover:bg-green-700' 
+                      : 'hover:bg-green-700'
                   }`}
+                  style={{ backgroundColor: '#6db33f' }}
                 >
                   <ShoppingCart className="h-5 w-5 mr-2" />
                   Add to Cart - {formatPrice(product.price * quantity)}
