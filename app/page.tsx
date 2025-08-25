@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useAuth } from '@/components/auth/AuthProvider';
 
 // Mock data for demonstration
 const carouselItems = [
@@ -370,6 +371,7 @@ export default function HomePage() {
   const [scrollY, setScrollY] = useState(0);
   const [cartItems, setCartItems] = useState<{[key: number]: number}>({});
   const [expandedCategories, setExpandedCategories] = useState<{[key: string]: boolean}>({});
+  const { user, loading, signOut } = useAuth();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -557,10 +559,32 @@ export default function HomePage() {
             </div>
 
             <div className="hidden md:flex items-center gap-4">
-              <Button variant="ghost" size="sm">
-                <User className="h-4 w-4 mr-2" />
-                Profile
-              </Button>
+              {loading ? (
+                <div className="w-8 h-8 bg-gray-200 rounded-full animate-pulse"></div>
+              ) : user ? (
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-gray-700">
+                    Welcome, {user.profile?.full_name || user.email}
+                  </span>
+                  <Button variant="ghost" size="sm" onClick={signOut}>
+                    Sign Out
+                  </Button>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <Link href="/auth/login">
+                    <Button variant="ghost" size="sm">
+                      <User className="h-4 w-4 mr-2" />
+                      Login
+                    </Button>
+                  </Link>
+                  <Link href="/auth/signup">
+                    <Button size="sm" style={{ backgroundColor: '#6db33f' }}>
+                      Sign Up
+                    </Button>
+                  </Link>
+                </div>
+              )}
               <Link href="/cart">
                 <Button variant="ghost" size="sm" className="relative">
                   <ShoppingCart className="h-4 w-4 mr-2" />
@@ -593,10 +617,33 @@ export default function HomePage() {
             
             <div className="p-4">
               <div className="space-y-4">
-                <div className="flex gap-2">
-                  <Button className="flex-1" style={{ backgroundColor: '#6db33f' }}>Login</Button>
-                  <Button variant="outline" className="flex-1">Signup</Button>
-                </div>
+                {!loading && (
+                  <div className="flex gap-2">
+                    {user ? (
+                      <div className="w-full">
+                        <p className="text-sm text-gray-700 mb-2">
+                          Welcome, {user.profile?.full_name || user.email}
+                        </p>
+                        <Button onClick={signOut} variant="outline" className="w-full">
+                          Sign Out
+                        </Button>
+                      </div>
+                    ) : (
+                      <>
+                        <Link href="/auth/login" className="flex-1">
+                          <Button className="w-full" style={{ backgroundColor: '#6db33f' }}>
+                            Login
+                          </Button>
+                        </Link>
+                        <Link href="/auth/signup" className="flex-1">
+                          <Button variant="outline" className="w-full">
+                            Signup
+                          </Button>
+                        </Link>
+                      </>
+                    )}
+                  </div>
+                )}
                 
                 <div className="space-y-2">
                   <Link href="/track-orders" className="block py-2 text-gray-700 hover:text-green-600">

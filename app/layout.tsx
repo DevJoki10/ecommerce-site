@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
+import AuthProvider from '@/components/auth/AuthProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -64,7 +65,9 @@ export default function RootLayout({
         <meta name="ICBM" content="9.0820, 8.6753" />
       </head>
       <body className={inter.className}>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
         
         {/* Tidio Chat Widget */}
         <Script
