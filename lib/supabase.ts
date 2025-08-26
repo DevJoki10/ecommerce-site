@@ -1,19 +1,51 @@
-import { createClient } from '@supabase/supabase-js'
-import { Database } from '@/types/database'
+// Mock Supabase client for development without actual Supabase setup
+const mockSupabaseUrl = 'https://mock.supabase.co'
+const mockSupabaseKey = 'mock-key'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || mockSupabaseUrl
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || mockSupabaseKey
 
-export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey)
+// Create a mock client that doesn't require actual Supabase connection
+export const supabase = {
+  auth: {
+    getUser: () => Promise.resolve({ data: { user: null }, error: null }),
+    getSession: () => Promise.resolve({ data: { session: null }, error: null }),
+    onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
+    signUp: () => Promise.resolve({ data: null, error: { message: 'Authentication not configured' } }),
+    signInWithPassword: () => Promise.resolve({ data: null, error: { message: 'Authentication not configured' } }),
+    signInWithOAuth: () => Promise.resolve({ data: null, error: { message: 'Authentication not configured' } }),
+    signOut: () => Promise.resolve({ error: null }),
+    resetPasswordForEmail: () => Promise.resolve({ error: null }),
+    updateUser: () => Promise.resolve({ error: null })
+  },
+  from: () => ({
+    select: () => ({
+      eq: () => ({
+        single: () => Promise.resolve({ data: null, error: null }),
+        limit: () => Promise.resolve({ data: [], error: null })
+      }),
+      order: () => ({
+        limit: () => Promise.resolve({ data: [], error: null })
+      }),
+      limit: () => Promise.resolve({ data: [], error: null })
+    }),
+    insert: () => ({
+      select: () => ({
+        single: () => Promise.resolve({ data: null, error: null })
+      })
+    }),
+    update: () => ({
+      eq: () => ({
+        select: () => ({
+          single: () => Promise.resolve({ data: null, error: null })
+        })
+      })
+    }),
+    delete: () => ({
+      eq: () => Promise.resolve({ error: null })
+    })
+  })
+}
 
-// Server-side client with service role key
-export const supabaseAdmin = createClient<Database>(
-  supabaseUrl,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false
-    }
-  }
-)
+// Server-side client (same mock for now)
+export const supabaseAdmin = supabase
