@@ -97,7 +97,7 @@ const getProductById = (id: string) => {
     },
     '3': {
       id: '3',
-      name: '1/4W Resistor Kit (100 pieces)',
+      name: '1/4W Carbon Film Resistor Kit (100 pieces)',
       price: 2500,
       originalPrice: 3000,
       discount: 17,
@@ -107,14 +107,14 @@ const getProductById = (id: string) => {
       category: 'electronics-components',
       inStock: true,
       stockCount: 120,
-      description: 'Complete assortment of 1/4W carbon film resistors ranging from 0.20Ω to 910kΩ. Perfect for electronics projects, repairs, and prototyping. Each resistor is color-coded for easy identification.',
+      description: 'Complete assortment of 1/4W carbon film resistors ranging from 1Ω to 1MΩ. Perfect for electronics projects, repairs, and prototyping. Each resistor is color-coded for easy identification and comes with a comprehensive value chart.',
       keyFeatures: [
         '100 pieces assorted resistor kit',
         '1/4W power rating',
         'Carbon film construction',
         'Color-coded for easy identification',
         '±5% tolerance',
-        'Wide resistance range (0.20Ω - 910kΩ)',
+        'Wide resistance range (1Ω - 1MΩ)',
         'Suitable for breadboard use',
         'Lead-free construction'
       ],
@@ -123,14 +123,14 @@ const getProductById = (id: string) => {
         'Tolerance': '±5%',
         'Temperature Coefficient': '±200 ppm/°C',
         'Operating Temperature': '-55°C to +155°C',
-        'Resistance Range': '0.20Ω to 910kΩ',
+        'Resistance Range': '1Ω to 1MΩ',
         'Construction': 'Carbon Film',
         'Lead Material': 'Tinned Copper',
         'Body Length': '6.5mm ±0.5mm',
         'Body Diameter': '2.3mm ±0.3mm',
         'Lead Diameter': '0.6mm ±0.05mm',
         'Lead Length': '28mm ±3mm',
-        'Packaging': 'Bulk pack with value list'
+        'Packaging': 'Organized storage box with value chart'
       },
       applications: [
         'Electronic circuit prototyping',
@@ -140,7 +140,9 @@ const getProductById = (id: string) => {
         'LED current limiting',
         'Analog signal conditioning',
         'Filter circuits',
-        'Amplifier biasing'
+        'Amplifier biasing',
+        'Educational electronics projects',
+        'Repair and maintenance work'
       ],
       usage: [
         'Identify resistance value using color code',
@@ -150,7 +152,7 @@ const getProductById = (id: string) => {
         'Verify resistance with multimeter',
         'Ensure power rating is adequate',
         'Use appropriate safety margins',
-        'Store unused resistors properly'
+        'Store unused resistors in provided organizer'
       ],
       cautions: [
         'Do not exceed 1/4W power rating',
@@ -161,6 +163,137 @@ const getProductById = (id: string) => {
         'Store in dry environment',
         'Avoid mechanical stress on body',
         'Double-check connections in critical circuits'
+      ]
+    },
+    '15': {
+      id: '15',
+      name: '2W Metal Film Resistor 10Ω',
+      price: 150,
+      originalPrice: 200,
+      discount: 25,
+      image: null,
+      rating: 4.5,
+      reviewCount: 34,
+      category: 'electronics-components',
+      inStock: true,
+      stockCount: 85,
+      description: 'High-power 2W metal film resistor with 10Ω resistance value. Excellent for power applications, current sensing, and high-current circuits where precision and stability are required.',
+      keyFeatures: [
+        '2W power rating for high-power applications',
+        'Metal film construction for stability',
+        '10Ω resistance value',
+        '±1% precision tolerance',
+        'Low temperature coefficient',
+        'Excellent long-term stability',
+        'Flame retardant coating',
+        'Lead-free construction'
+      ],
+      specifications: {
+        'Power Rating': '2W',
+        'Resistance': '10Ω',
+        'Tolerance': '±1%',
+        'Temperature Coefficient': '±50 ppm/°C',
+        'Operating Temperature': '-55°C to +155°C',
+        'Construction': 'Metal Film',
+        'Lead Material': 'Tinned Copper Wire',
+        'Body Length': '9.0mm ±0.5mm',
+        'Body Diameter': '3.6mm ±0.3mm',
+        'Lead Diameter': '0.8mm ±0.05mm',
+        'Lead Length': '28mm ±3mm'
+      },
+      applications: [
+        'Power supply circuits',
+        'Current sensing applications',
+        'Load testing circuits',
+        'Power amplifier circuits',
+        'Motor control circuits',
+        'Voltage regulation',
+        'High-current switching',
+        'Industrial control systems'
+      ],
+      usage: [
+        'Check power requirements before use',
+        'Mount with adequate heat dissipation',
+        'Verify resistance value with multimeter',
+        'Use proper heat sinking if needed',
+        'Ensure adequate ventilation around resistor',
+        'Solder quickly to avoid overheating',
+        'Allow cooling time between operations',
+        'Monitor temperature during operation'
+      ],
+      cautions: [
+        'Do not exceed 2W power rating',
+        'Ensure adequate ventilation and cooling',
+        'Handle with care when hot - can cause burns',
+        'Use heat sink for continuous high-power operation',
+        'Avoid mechanical stress on leads',
+        'Do not operate in enclosed spaces without ventilation',
+        'Check temperature rise during operation',
+        'Allow proper derating for ambient temperature'
+      ]
+    },
+    '16': {
+      id: '16',
+      name: 'Transistor Assortment Kit (NPN/PNP)',
+      price: 3500,
+      originalPrice: 4000,
+      discount: 12,
+      image: null,
+      rating: 4.6,
+      reviewCount: 67,
+      category: 'electronics-components',
+      inStock: true,
+      stockCount: 45,
+      description: 'Comprehensive transistor kit containing popular NPN and PNP bipolar junction transistors. Perfect for amplifier circuits, switching applications, and general-purpose electronics projects.',
+      keyFeatures: [
+        '50 pieces mixed NPN/PNP transistors',
+        'Popular types: 2N2222, 2N3904, 2N3906, BC547, BC557',
+        'TO-92 package for easy breadboard use',
+        'Wide range of current ratings',
+        'Suitable for audio and RF applications',
+        'Organized storage box included',
+        'Comprehensive datasheet provided',
+        'Lead-free construction'
+      ],
+      specifications: {
+        'Package Type': 'TO-92',
+        'Transistor Types': 'NPN & PNP BJT',
+        'Collector Current': '100mA to 1A (varies by type)',
+        'Collector-Emitter Voltage': '30V to 60V',
+        'Power Dissipation': '500mW to 1W',
+        'Operating Temperature': '-55°C to +150°C',
+        'Gain (hFE)': '100 to 400 (varies by type)',
+        'Quantity': '50 pieces total'
+      },
+      applications: [
+        'Audio amplifier circuits',
+        'Switching applications',
+        'Signal amplification',
+        'Oscillator circuits',
+        'Digital logic circuits',
+        'Motor driver circuits',
+        'LED driver circuits',
+        'Sensor interface circuits'
+      ],
+      usage: [
+        'Identify pin configuration (CBE)',
+        'Check transistor type (NPN/PNP)',
+        'Verify maximum ratings before use',
+        'Use appropriate base current limiting resistor',
+        'Connect emitter to appropriate supply rail',
+        'Add heat sink for high-power applications',
+        'Test with multimeter before installation',
+        'Follow proper ESD handling procedures'
+      ],
+      cautions: [
+        'Do not exceed maximum collector current',
+        'Observe correct pin connections (CBE)',
+        'Use ESD protection when handling',
+        'Do not reverse bias base-emitter junction',
+        'Ensure adequate heat dissipation',
+        'Check polarity for NPN vs PNP types',
+        'Avoid mechanical stress on leads',
+        'Store in anti-static packaging'
       ]
     }
   };

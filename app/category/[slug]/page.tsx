@@ -65,7 +65,7 @@ const categoryData = {
     products: [
       {
         id: 3,
-        name: "1/4W Resistor Kit",
+        name: "1/4W Resistor Kit (100 pieces)",
         price: 2500,
         originalPrice: 3000,
         discount: 17,
@@ -75,7 +75,7 @@ const categoryData = {
       },
       {
         id: 6,
-        name: "Capacitor Kit 55pcs",
+        name: "Electrolytic Capacitor Kit (55pcs)",
         price: 4500,
         image: null,
         rating: 4.8,
@@ -83,18 +83,50 @@ const categoryData = {
       },
       {
         id: 15,
-        name: "Transistor Assortment Kit",
+        name: "2W Metal Film Resistor 10Ω",
+        price: 150,
+        image: null,
+        rating: 4.5,
+        category: "electronics-components"
+      },
+      {
+        id: 16,
+        name: "Transistor Assortment Kit (NPN/PNP)",
         price: 3500,
         image: null,
         rating: 4.6,
         category: "electronics-components"
       },
       {
-        id: 16,
-        name: "Diode Kit 100pcs",
+        id: 17,
+        name: "Ceramic Capacitor Kit (100pcs)",
+        price: 1800,
+        image: null,
+        rating: 4.7,
+        category: "electronics-components"
+      },
+      {
+        id: 18,
+        name: "Diode Rectifier Kit (50pcs)",
         price: 2800,
         image: null,
-        rating: 4.5,
+        rating: 4.4,
+        category: "electronics-components"
+      },
+      {
+        id: 19,
+        name: "IC Socket Kit (8-40 pin)",
+        price: 3200,
+        image: null,
+        rating: 4.6,
+        category: "electronics-components"
+      },
+      {
+        id: 20,
+        name: "LED Assortment Kit (200pcs)",
+        price: 2200,
+        image: null,
+        rating: 4.8,
         category: "electronics-components"
       }
     ]

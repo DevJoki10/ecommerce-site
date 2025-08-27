@@ -60,7 +60,7 @@ const todaysDeals = [
   },
   {
     id: 3,
-    name: "1/4W Resistor Kit",
+    name: "1/4W Resistor Kit (100 pieces)",
     price: 2500,
     originalPrice: 3000,
     discount: 17,
@@ -79,6 +79,28 @@ const todaysDeals = [
     rating: 4.6,
     timeLeft: "3h 20m",
     category: "sensors-modules"
+  },
+  {
+    id: 15,
+    name: "2W Metal Film Resistor 10Ω",
+    price: 150,
+    originalPrice: 200,
+    discount: 25,
+    image: null,
+    rating: 4.5,
+    timeLeft: "4h 10m",
+    category: "electronics-components"
+  },
+  {
+    id: 16,
+    name: "Transistor Assortment Kit",
+    price: 3500,
+    originalPrice: 4000,
+    discount: 12,
+    image: null,
+    rating: 4.6,
+    timeLeft: "6h 30m",
+    category: "electronics-components"
   }
 ];
 
@@ -93,7 +115,7 @@ const newArrivals = [
   },
   {
     id: 6,
-    name: "Capacitor Kit 55pcs",
+    name: "Electrolytic Capacitor Kit (55pcs)",
     price: 4500,
     image: null,
     rating: 4.8,
@@ -114,6 +136,22 @@ const newArrivals = [
     image: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.6,
     category: "power-energy"
+  },
+  {
+    id: 17,
+    name: "Ceramic Capacitor Kit (100pcs)",
+    price: 1800,
+    image: null,
+    rating: 4.7,
+    category: "electronics-components"
+  },
+  {
+    id: 18,
+    name: "Diode Rectifier Kit (50pcs)",
+    price: 2800,
+    image: null,
+    rating: 4.4,
+    category: "electronics-components"
   }
 ];
 
