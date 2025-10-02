@@ -1,5 +1,6 @@
 'use client';
 
+import CategoryMegaMenu from '@/components/navigation/CategoryMegaMenu';
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ShoppingCart, Heart, Star, Clock, Truck, Shield, Users, Award, MessageCircle, User, Home, Search, Menu, X, ChevronDown, ChevronUp, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 import Image from 'next/image';
@@ -753,6 +754,12 @@ export default function HomePage() {
         <div className="bg-white border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex gap-2">
+              {/* Category Menu - Desktop Only */}
+              <div className="hidden lg:block">
+                <CategoryMegaMenu />
+              </div>
+              
+              {/* Search Bar */}
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                 <Input
@@ -760,6 +767,7 @@ export default function HomePage() {
                   className="pl-10"
                 />
               </div>
+              
               <Button style={{ backgroundColor: '#6db33f' }}>Search</Button>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import CategoryMegaMenu from '@/components/navigation/CategoryMegaMenu';
 import Script from 'next/script';
 import AuthProvider from '@/components/auth/AuthProvider';
 
