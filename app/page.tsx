@@ -2,7 +2,7 @@
 
 import CategoryMegaMenu from '@/components/navigation/CategoryMegaMenu';
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, ShoppingCart, Heart, Star, Clock, Truck, Shield, Users, Award, MessageCircle, User, Home, Search, Menu, X, ChevronDown, ChevronUp, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ShoppingCart, Heart, Star, Clock, Truck, Shield, Users, Award, MessageCircle, User, Chrome as Home, Search, Menu, X, ChevronDown, ChevronUp, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';

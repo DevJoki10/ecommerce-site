@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { ChevronDown, ChevronRight, Grid3X3 } from 'lucide-react';
+import { ChevronDown, ChevronRight, Grid3x3 as Grid3X3 } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
