@@ -322,7 +322,7 @@ export default function CategoryMegaMenu() {
                                   className="text-xs text-gray-600 hover:text-green-600 py-1"
                                   onClick={() => setIsOpen(false)}
                                 >
-                                  • {item}
+                                  {item}
                                 </Link>
                               ))}
                             </div>
