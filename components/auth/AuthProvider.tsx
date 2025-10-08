@@ -1,12 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState } from 'react';
-
-interface AuthUser {
-  id: string;
-  email: string;
-  profile?: any;
-}
+import { authService, AuthUser } from '@/lib/auth';
 
 interface AuthContextType {
   user: AuthUser | null;
@@ -16,7 +11,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
-  loading: false,
+  loading: true,
   signOut: async () => {},
 });
 
@@ -30,10 +25,34 @@ export const useAuth = () => {
 
 export default function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let mounted = true;
+    
+    const unsubscribe = authService.onAuthStateChange((user) => {
+      if (mounted) {
+        setUser(user);
+        setLoading(false);
+      }
+    });
+
+    return () => {
+      mounted = false;
+      unsubscribe();
+    };
+  }, []);
 
   const signOut = async () => {
-    setUser(null);
+    setLoading(true);
+    try {
+      await authService.signOut();
+      setUser(null);
+    } catch (error) {
+      console.error('Error signing out:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
